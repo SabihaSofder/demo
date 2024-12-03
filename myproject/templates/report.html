@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report an Issue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Report an Issue</h1>
+        <form id="reportIssueForm">
+            <div class="mb-3">
+                <label for="actorType" class="form-label">I am a:</label>
+                <select class="form-select" id="actorType" name="actorType" required>
+                    <option value="">Select</option>
+                    <option value="user">User</option>
+                    <option value="recycler">Recycler</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="issueCategory" class="form-label">Issue Category:</label>
+                <select class="form-select" id="issueCategory" name="issueCategory" required>
+                    <option value="">Select</option>
+                    <option value="missedPickup">Missed Pickup</option>
+                    <option value="incorrectService">Incorrect Service</option>
+                    <option value="damagedProperty">Damaged Property</option>
+                    <option value="unprofessionalBehavior">Unprofessional Behavior</option>
+                    <option value="appIssue">App Issue</option>
+                    <option value="paymentProblem">Payment/Reward Problem</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <textarea class="form-control" id="description" name="description" rows="4" placeholder="Provide a detailed description of the issue" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="attachments" class="form-label">Attach Evidence (optional):</label>
+                <input type="file" class="form-control" id="attachments" name="attachments" multiple>
+            </div>
+
+            <div class="mb-3">
+                <label for="priority" class="form-label">Priority Level:</label>
+                <select class="form-select" id="priority" name="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('reportIssueForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Issue submitted successfully!');
+            // Add logic to send data to the backend.
+        });
+    </script>
+</body>
+</html>

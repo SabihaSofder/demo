@@ -22,4 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.contactUs,name='contact'),
     path('dashboard/',views.adminDashboard,name='dashboard'),
+    path('displayContact/', views.displayContactView, name = "displayContact"),
+    path('deleteContact/<int:slug>', views.deleteContact, name = "deleteContact"),
+
+    
 ]

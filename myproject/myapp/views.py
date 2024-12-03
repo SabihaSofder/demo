@@ -20,3 +20,22 @@ def contactUs(request) :
 
 def adminDashboard(request):
     return render(request, 'recycle.html')
+
+
+#Contact Display
+def displayContactView(request):
+    contacts = contactUsModel.objects.filter()
+    
+    args = {
+        "contacts": contacts,  
+    }
+    return render(request, "contactAdmin.html",args)
+
+
+#Read contact   
+def deleteContact(request, slug):
+    certificate = contactUsModel.objects.get(id=slug)
+    certificate.delete()
+
+        # Appending the search query for nearby lakes to the Google Maps URL
+    return redirect('displayContact')

@@ -1,10 +1,8 @@
 from django.contrib import admin
-from .models import *
+from .models import contactUs
 
 # Register your models here.
-class contact_admin(admin.ModelAdmin):
-    list_display = ('full_name', 'email', 'phone_number')  # Columns to display in the list view
-    
+class contactUsAdmin(admin.ModelAdmin):
+    list_display = ('contactFullName', 'contactEmail', 'contactPhoneNumber', 'contactSubject', 'contactMessage')
 
-# Register the model with the custom ModelAdmin
-admin.site.register(contact, contact_admin)
+admin.site.register(contactUs, contactUsAdmin)

@@ -104,7 +104,6 @@
 <body>
     <div class="container">
         <h1>Contact Us</h1>
-        
         <a href="{% url 'dashboard' %}" class="button">
             <button class="button">
                 <svg class="svgIcon" viewBox="0 0 384 512">
@@ -115,6 +114,7 @@
             </button>
         </a>
 
+        <!-- For loop -->
         {% for i in contacts %}
         <div class="message">
             <p>Name: {{i.contactFullName}} </p>

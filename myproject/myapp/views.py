@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render, redirect, HttpResponse
 from myapp.models import contactUs as contactUsModel
 
 
-
+#View Contact
 def contactUs(request) : 
     if request.method =='POST' :
         fullName = request.POST.get('full_name')
@@ -18,6 +18,7 @@ def contactUs(request) :
     return render(request, "contact.html")
 
 
+#Admin dashboard 
 def adminDashboard(request):
     return render(request, 'recycle.html')
 
@@ -37,5 +38,4 @@ def deleteContact(request, slug):
     certificate = contactUsModel.objects.get(id=slug)
     certificate.delete()
 
-        # Appending the search query for nearby lakes to the Google Maps URL
     return redirect('displayContact')

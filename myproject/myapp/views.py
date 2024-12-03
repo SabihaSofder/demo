@@ -16,3 +16,7 @@ def contactUs(request) :
         return HttpResponse("Thanks for contacting")
         
     return render(request, "contact.html")
+
+
+def adminDashboard(request):
+    return render(request, 'recycle.html')

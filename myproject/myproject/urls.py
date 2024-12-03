@@ -20,5 +20,6 @@ from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.contactUs,name='contact')
+    path('',views.contactUs,name='contact'),
+    path('dashboard/',views.adminDashboard,name='dashboard'),
 ]
